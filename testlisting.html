@@ -1,0 +1,292 @@
+<html>
+<head>
+  <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css">
+  <script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+  <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css">
+  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Give+You+Glory">
+  </link>
+  <style>
+
+  @font-face {
+    font-family: 'Give You Glory';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Give You Glory'), local('GiveYouGlory'), url(http://fonts.gstatic.com/s/giveyouglory/v6/DFEWZFgGmfseyIdGRJAxuJre1ArFO0nxyUXZnjCjpOg.woff) format('woff');
+  }
+  ul#container{
+    list-style-type: none;
+    border:1px solid;
+  }
+  ul.container > li {
+    display:inline;
+    /*border:1px solid;*/
+    float:left;
+  }
+  ul#stacks{
+    /*padding:5px;*/
+    margin:2px;
+  }
+  ul#stacks >li {
+    display:block;
+    border:1px solid;
+    background-color: #cff;
+    width:100%;
+    text-align: center;
+  }
+  div.main_container{
+    /*border:1px solid;*/
+    float:left;
+    height:auto;
+    border:1px solid;
+    background-color: #D2CECC;
+  }
+  div#stack {
+    margin:2px;
+    /*padding:2px;*/
+    background-color: pink;
+    color:teal;
+  }
+  div#stack > ul {
+    list-style-type: none;
+    border:1px solid;
+    margin:2px;
+  }
+  div#main_stack_1 {
+    border:1px solid;
+    float:left;
+    padding:2px;
+    margin:2px;
+  }
+  div#main_stack_1 >ul{
+    border:1px solid;
+    float:left;
+    padding:2px;
+    margin:2px;
+  }
+  div#main_stack_2 {
+    border:1px solid;
+    float:left;
+    padding:2px;
+    margin:2px;
+  }
+  div#main_stack_2 >ul{
+    border:1px solid;
+    float:left;
+    padding:2px;
+    margin:2px;
+  }
+  div#main_stack_3 {
+    border:1px solid;
+    float:left;
+    padding:2px;
+    margin:2px;
+  }
+  div#main_stack_3 >ul{
+    border:1px solid;
+    float:left;
+    padding:2px;
+    margin:2px;
+  }
+  h1 {
+    /*margin:5px;*/
+    /*padding: 10px;*/
+    text-align: center;
+    color:teal;s
+  }
+  div#main {
+    border:1px solid;
+    float:left;
+    /*padding:10px;*/
+    margin:2px;
+    min-width: 100;
+  }
+  div {
+
+  }
+  #main {
+    background-color: #cff;
+    color:#1f94c4;
+  }
+  div#stack_title{
+    background-color:#F3F2BA;
+    border:1px solid;
+    /*height:100%;
+    width:100%;*/
+  }
+  div#stack_title{
+    /*background-color:#F3F2BA;
+    border:1px solid;*/
+    /*height:100%;
+    width:100%;*/
+    /*border:1px solid;*/
+    font-size: 0.5em;
+    text-shadow:2px 2px #f0f0f0;
+    /*font-family: arial;*/
+  }
+  div{
+    padding:5px;
+    margin:5px;
+  }
+  ul{
+    padding:5px;
+    margin:5px;
+  }
+  ul[class="container ui-sortable"] {
+    min-width: 150px;
+    max-width:150px;
+    min-height: 600px;
+    max-height: 768px;
+  }
+  ul[class="container ui-sortable"] > li{
+    font-family: 'Give You Glory';
+    text-decoration: none;
+    min-width: 145px;
+    max-width:145px;
+    background-color:#8FE0E4;
+    /*border:1px solid #8F8884;*/
+    text-align: center;
+    color:black;
+    margin:2px;
+    border-width: 0 2px 3px 0;
+    border-style: solid;
+    border-color: #8F8884 #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+}
+  }
+
+  div#sub_stack_title h2 {
+    /*background-color:#F3F2BA;*/
+    /*border:1px solid;*/
+    font-size: 0.95em;
+    padding:5px;
+    text-shadow:1px 1px #F3F2BA;
+    font-family: "Give You Glory";
+    text-align: center;
+  }
+
+ul.container > li a {
+  text-decoration: none;
+}
+ul.container > li a:hover {
+  color:blue;
+}
+  </style>
+  <script>
+
+  $(function(){
+    $("ul.container").sortable({
+      connectWith:"ul"
+    });
+  });
+  $(".container").disableSelection();
+
+  </script>
+  <body>
+    <div id="main">
+      <div class="main_container">
+        <div id="stack_title">
+          <h1>Main Stack 1</h1>
+        </div>
+        <div id="main_stack_1">
+          <ul class="container">
+            <div id="sub_stack_title">
+            <h2>Main Stack 1</h2>
+            </div>
+            <li>
+              <div><a href="#">item 1</a></div>
+            </li>
+            <li>
+              <div id="item"><a href="#">item 2</a></div>
+            </li>
+            <li>
+              <div id="item"><a href="#">item 13</a></div>
+            </li>
+            <li>
+              <div id="item"><a href="#">item 14</a></div>
+            </li>
+            <li>
+              <div id="item"><a href="#">item 15</a></div>
+            </li>
+          </ul>
+        </div>
+        <div id="main_stack_1">
+          <ul class="container">
+            <div id="sub_stack_title">
+              <h2>Main Stack 1</h2>
+            </div>
+            <li><div><a href="#">item 3</a></div>
+            </li>
+            <li>
+              <div><a href="#">item 4</a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_container">
+        <div id="stack_title">
+            <h1>Main Stack 2</h1>
+        </div>
+        <div id="main_stack_2">
+
+          <ul class="container">
+            <div id="sub_stack_title">
+              <h2>Main Stack 1</h2>
+            </div>
+            <li>
+              <div><a href="#">item 5</a></div>
+            </li>
+            <li>
+              <div><a href="#">item 6</a></div>
+            </li>
+          </div>
+          <div id="main_stack_2">
+            <ul class="container">
+              <div id="sub_stack_title">
+                <h2>Main Stack 1</h2>
+              </div>
+              <li>
+                <div><a href="#">item 7</a></div>
+              </li>
+              <li>
+                <div><a href="#">item 8</a></div>
+              </li>
+            </div>
+
+        </ul>
+      </div>
+      <div class="main_container">
+        <div id="stack_title">
+          <h1>Main Stack 3</h1>
+        </div>
+        <div id="main_stack_3">
+          <ul class="container">
+            <div id="sub_stack_title">
+              <h2>Main Stack 1</h2>
+            </div>
+            <li>
+              <div><a href="#">item 9</a></div>
+            </li>
+            <li>
+              <div><a href="#">item 10</a></div>
+            </li>
+          </div>
+          <div id="main_stack_3">
+            <ul class="container">
+              <div id="sub_stack_title">
+                <h2>Main Stack 1</h2>
+              </div>
+              <li>
+                <div><a href="#">item 11</a></div>
+              </li>
+              <li>
+                <div><a href="#">item 12</a></div>
+              </li>
+            </div>
+        </ul>
+      </div>
+    </div>
+  </body>
+  </html
